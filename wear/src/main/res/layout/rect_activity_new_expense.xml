@@ -3,7 +3,8 @@
 xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 android:layout_height="match_parent"
-android:layout_width="match_parent">
+android:layout_width="match_parent"
+    android:backgroundTintMode="screen">
 
 <FrameLayout
     android:id="@+id/frame_layout"
@@ -11,85 +12,101 @@ android:layout_width="match_parent">
     android:layout_height="match_parent"
     app:layout_box="bottom">
 
-    <android.support.wearable.view.CardScrollView
-        android:id="@+id/card_scroll_view"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        app:layout_box="bottom"
-        android:layout_gravity="right|center_vertical">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-        <android.support.wearable.view.CardFrame
-            android:layout_height="wrap_content"
-            android:layout_width="fill_parent">
+        <android.support.wearable.view.CardScrollView
+            android:id="@+id/card_scroll_view"
+            android:layout_height="72dp"
+            android:layout_width="match_parent"
+            app:layout_box="bottom"
+            android:layout_gravity="right|center_vertical">
 
-            <LinearLayout
+            <android.support.wearable.view.CardFrame
                 android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:orientation="vertical">
+                android:layout_width="fill_parent">
 
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Small Text"
-                        android:id="@+id/date" />
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:text="Small Text"
-                        android:id="@+id/time" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Small Text"
+                            android:id="@+id/date" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Small Text"
+                            android:id="@+id/time" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent">
+
+                        <TextView
+                            android:fontFamily="sans-serif-light"
+                            android:layout_height="wrap_content"
+                            android:layout_width="95dp"
+                            android:text="test"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:id="@+id/expense"
+                            android:gravity="center_vertical" />
+
+                        <TextView
+                            android:fontFamily="sans-serif-light"
+                            android:layout_height="wrap_content"
+                            android:layout_width="52dp"
+                            android:text="test"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:id="@+id/amount"
+                            android:gravity="center_vertical|right" />
+
+                    </LinearLayout>
+
                 </LinearLayout>
+            </android.support.wearable.view.CardFrame>
+        </android.support.wearable.view.CardScrollView>
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
 
-                    <TextView
-                        android:fontFamily="sans-serif-light"
-                        android:layout_height="wrap_content"
-                        android:layout_width="95dp"
-                        android:text="test"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:id="@+id/expense"
-                        android:gravity="center_vertical" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="74dp"
+                android:id="@+id/button_ok"
+                android:onClick="confirmExpense"
+                android:background="@drawable/go_to_phone_00211" />
 
-                    <TextView
-                        android:fontFamily="sans-serif-light"
-                        android:layout_height="wrap_content"
-                        android:layout_width="52dp"
-                        android:text="test"
-                        android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:id="@+id/amount"
-                        android:gravity="center_vertical|right" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="74dp"
+                android:id="@+id/button_ko"
+                android:onClick="cancelExpense"
+                android:background="@drawable/ic_full_cancel" />
 
-                </LinearLayout>
-            </LinearLayout>
-        </android.support.wearable.view.CardFrame>
-    </android.support.wearable.view.CardScrollView>
+        </LinearLayout>
 
-    <Button
-        android:layout_width="73dp"
-        android:layout_height="wrap_content"
-        android:text="YES"
-        android:id="@+id/button"
-        android:layout_gravity="left|bottom" />
+    </LinearLayout>
 
-    <Button
-        android:layout_width="74dp"
-        android:layout_height="wrap_content"
-        android:text="NO"
-        android:id="@+id/button2"
-        android:layout_gravity="right|bottom" />
 </FrameLayout>
 </android.support.wearable.view.BoxInsetLayout>
 

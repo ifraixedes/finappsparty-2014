@@ -7,6 +7,7 @@ import android.speech.RecognizerIntent;
 import android.util.Log;
 import android.widget.TextView;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -25,7 +26,7 @@ public class CmdWatchActivity extends Activity {
 
     @Override
     protected void onResume() {
-        processExpense("Apples 10.38");
+       // processExpense("Apples 10.38");
         super.onResume();
     }
 
@@ -33,12 +34,13 @@ public class CmdWatchActivity extends Activity {
     // This is where you process the intent and extract the speech text from the intent.
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        if (requestCode == SPEECH_REQUEST_CODE && resultCode == RESULT_OK) {
-//            List<String> results = data.getStringArrayListExtra(
-//                    RecognizerIntent.EXTRA_RESULTS);
-//            processExpense(results.get(0));
-//            //
-        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == SPEECH_REQUEST_CODE && resultCode == RESULT_OK) {
+            List<String> results = data.getStringArrayListExtra(
+                    RecognizerIntent.EXTRA_RESULTS);
+            processExpense(results.get(0));
+            //
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     // Create an intent that can start the Speech Recognizer activity
