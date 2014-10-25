@@ -1,4 +1,4 @@
-package financerables.myapplication;
+package financerables.gastos;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

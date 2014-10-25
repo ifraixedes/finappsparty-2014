@@ -1,4 +1,4 @@
-package financerables.myapplication;
+package financerables.gastos;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CmdWatchActivity extends Activity {
+    public final static String EXPENSE_DETAILS = "financerables.gastos.expense_details";
+    public final static String EXPENSE_AMOUNT = "financerables.gastos.expense_amount";
 
     private static final int SPEECH_REQUEST_CODE = 0;
     private TextView mTextView;
@@ -60,6 +62,7 @@ public class CmdWatchActivity extends Activity {
 
             Log.i("expense", expense);
             Log.i("amount", amount);
+            Intent intent = new Intent(this, NewExpenseActivity.class);
         }
     }
 }
