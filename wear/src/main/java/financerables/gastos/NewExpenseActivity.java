@@ -106,6 +106,7 @@ public class NewExpenseActivity extends Activity implements ConnectionCallbacks,
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
+        finish();
     }
 
 
@@ -161,7 +162,7 @@ public class NewExpenseActivity extends Activity implements ConnectionCallbacks,
     private void processExpense(String spokenText) {
         Log.i("got", spokenText);
 
-        Pattern expenseInputPattern = Pattern.compile("([a-z]+) ([\\d]*(?:.[\\d]+)*)", Pattern.CASE_INSENSITIVE);
+        Pattern expenseInputPattern = Pattern.compile("([a-z ]+) ([\\d]*(?:.[\\d]+)*)", Pattern.CASE_INSENSITIVE);
         Matcher expenseMatcher = expenseInputPattern.matcher(spokenText);
 
         if (expenseMatcher.matches()) {
