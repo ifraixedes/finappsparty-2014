@@ -15,7 +15,8 @@ android:layout_width="match_parent"
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
 
         <android.support.wearable.view.CardScrollView
             android:id="@+id/card_scroll_view"
@@ -36,14 +37,16 @@ android:layout_width="match_parent"
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_height="fill_parent"
+                        android:weightSum="1">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceSmall"
                             android:text="Small Text"
-                            android:id="@+id/date" />
+                            android:id="@+id/date"
+                            android:layout_weight="0.71" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -56,23 +59,25 @@ android:layout_width="match_parent"
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
+                        android:layout_height="fill_parent"
+                        android:weightSum="1">
 
                         <TextView
                             android:fontFamily="sans-serif-light"
                             android:layout_height="wrap_content"
                             android:layout_width="95dp"
-                            android:text="test"
+                            android:text='"item"'
                             android:textColor="@color/black"
                             android:textSize="14sp"
                             android:id="@+id/expense"
-                            android:gravity="center_vertical" />
+                            android:gravity="center_vertical"
+                            android:layout_weight="0.87" />
 
                         <TextView
                             android:fontFamily="sans-serif-light"
                             android:layout_height="wrap_content"
-                            android:layout_width="52dp"
-                            android:text="test"
+                            android:layout_width="56dp"
+                            android:text="$"
                             android:textColor="@color/black"
                             android:textSize="14sp"
                             android:id="@+id/amount"
