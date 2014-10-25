@@ -73,7 +73,6 @@ android:layout_width="match_parent">
                         android:gravity="center_vertical|right" />
 
                 </LinearLayout>
-
             </LinearLayout>
         </android.support.wearable.view.CardFrame>
     </android.support.wearable.view.CardScrollView>

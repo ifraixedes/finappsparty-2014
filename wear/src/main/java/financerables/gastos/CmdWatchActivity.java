@@ -57,12 +57,12 @@ public class CmdWatchActivity extends Activity {
         Matcher expenseMatcher = expenseInputPattern.matcher(spokenText);
 
         if (expenseMatcher.matches()) {
-            String expense = expenseMatcher.group(1);
-            String amount = expenseMatcher.group(2);
-
-            Log.i("expense", expense);
-            Log.i("amount", amount);
+            Log.i("expense", expenseMatcher.group(1));
+            Log.i("amount", expenseMatcher.group(2));
             Intent intent = new Intent(this, NewExpenseActivity.class);
+            intent.putExtra(EXPENSE_DETAILS, expenseMatcher.group(1));
+            intent.putExtra(EXPENSE_AMOUNT, Float.parseFloat(expenseMatcher.group(2)));
+            startActivity(intent);
         }
     }
 }
