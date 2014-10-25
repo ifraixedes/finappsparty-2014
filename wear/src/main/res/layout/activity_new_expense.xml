@@ -6,8 +6,8 @@
     android:id="@+id/watch_view_stub"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:rectLayout="@layout/rect_activity_desk_watch"
-    app:roundLayout="@layout/round_activity_desk_watch"
-    tools:context=".DeskWatchActivity"
+    app:rectLayout="@layout/rect_activity_new_expense"
+    app:roundLayout="@layout/round_activity_new_expense"
+    tools:context="financerables.myapplication.NewExpenseActivity"
     tools:deviceIds="wear">
 </android.support.wearable.view.WatchViewStub>
